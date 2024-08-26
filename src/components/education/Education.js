@@ -4,11 +4,12 @@ import Title from '../layouts/Title';
 
 const Education = () => {
   return (
-    <section id="resume" className="w-2/3 py-20 border-b-[1px] border-b-black">
+    <section id="resume" className="w-full py-20 border-b-[1px] border-b-black">
       <Title title="Education" />
       <div className="relative">
-              <div className="absolute top-0 left-0 w-[2px] h-5/6" style={{ backgroundColor: '#ff014f' }}></div>
-        <div className="mt-6 lgl:mt-14 w-full h-[1000px] border-l-[6px] border-l-black flex flex-col gap-10">
+        {/* Remove the vertical line in mobile view */}
+        <div className="hidden sm:block absolute top-0 left-0 w-[2px] h-full" style={{ backgroundColor: '#ff014f' }}></div>
+        <div className="mt-6 sm:mt-14 w-full flex flex-col gap-10">
           <ResumeCard
             title="B.Tech in Engineering Physics"
             subTitle="Indian Institute of Technology, Guwahati (2021-25)"

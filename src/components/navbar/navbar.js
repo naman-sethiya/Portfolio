@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../images/Capture.PNG';
 import { navLinksdata } from '../../constants';
 import { Link } from 'react-scroll';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
     return (
         <div
             className="
@@ -19,7 +24,9 @@ const Navbar = () => {
                 bg-bodyColor
                 shadow-md
                 py-4
-                px-10
+                px-6
+                lg:px-10
+                relative
             "
         >
             {/* Logo Section */}
@@ -29,13 +36,28 @@ const Navbar = () => {
                     alt="logo"
                     className="w-12 h-12 object-contain"
                 />
-                {/* Optional: Add a brand name or title next to the logo */}
-                {/* <span className="text-xl font-bold text-white">BrandName</span> */}
             </div>
 
+            {/* Mobile Menu Button */}
+            <button
+                className="lg:hidden p-2 rounded-md text-white bg-gray-800 hover:bg-gray-700"
+                onClick={toggleMenu}
+            >
+                {isMenuOpen ? <XIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
+            </button>
+
             {/* Navigation Links */}
-            <div>
-                <ul className="flex items-center gap-8">
+            <div
+                className={`
+                    ${isMenuOpen ? 'block' : 'hidden'}
+                    lg:flex lg:items-center lg:gap-8 flex-col lg:flex-row
+                    absolute lg:relative top-full lg:top-auto left-0 w-full lg:w-auto
+                    bg-bodyColor lg:bg-transparent shadow-lg lg:shadow-none
+                    lg:py-0 py-4 lg:px-0 px-6
+                    transition-transform transform ${isMenuOpen ? 'translate-y-0' : 'translate-y-full'}
+                `}
+            >
+                <ul className="flex flex-col lg:flex-row lg:gap-8 gap-4 lg:items-center">
                     {navLinksdata.map((navlink) => (
                         <li
                             key={navlink._id}
@@ -56,6 +78,7 @@ const Navbar = () => {
                                 smooth={true}
                                 offset={-70}
                                 duration={500}
+                                onClick={() => setIsMenuOpen(false)} // Close menu on link click
                             >
                                 {navlink.title}
                             </Link>
