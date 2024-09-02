@@ -85,6 +85,29 @@ const Navbar = () => {
                         </li>
                     ))}
                 </ul>
+                <ul className="flex flex-col lg:flex-row lg:gap-8 gap-4 lg:items-center">
+                    <li
+                        key="1006"
+                        className="
+                            text-base
+                            font-normal
+                            text-gray-400
+                            tracking-wide
+                            cursor-pointer
+                            hover:text-designColor
+                            duration-300
+                        "
+                    >
+                        <a
+                            href="https://drive.google.com/drive/folders/1hr4AXja-1nBjYrMB1hKfFShsbnnWpSp_?usp=sharing"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setIsMenuOpen(false)} // Close menu on link click
+                        >
+                            Resume
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     );

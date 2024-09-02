@@ -24,21 +24,25 @@ const Projects = () => {
           title="Job Application Portal"
           des="Developed a comprehensive job application portal using the MERN stack."
           src={one}
+          link = "https://github.com/naman-sethiya/Job-Application-Portal"
         />
         <ProjectsCard
           title="Real-Time Chat Application"
           des="Developed a robust MERN Stack application enabling both one-to-one and group chatting functionalities."
           src={two}
+          link = "https://github.com/naman-sethiya/Real-Time-Chat-Application"
         />
         <ProjectsCard
           title="GateGuard"
           des=" Developed a user-friendly website which provides real-time monitoring of students' entry and exit across various gates."
           src={three}
+          link = "https://github.com/naman-sethiya/GateGaurd"
         />
         <ProjectsCard
           title="Text File Compressor"
           des=" Developed a Text File Compressor which encodes the text file and reduces the size of text file."
           src={four}
+          link = "https://github.com/naman-sethiya/Text-File-Compressor"
         />
       </div>
     </section>
