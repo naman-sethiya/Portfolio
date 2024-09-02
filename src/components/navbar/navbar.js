@@ -69,6 +69,7 @@ const Navbar = () => {
                                 cursor-pointer
                                 hover:text-designColor
                                 duration-300
+                                lg:mb-0 mb-4
                             "
                         >
                             <Link
@@ -85,7 +86,7 @@ const Navbar = () => {
                         </li>
                     ))}
                 </ul>
-                <ul className="flex flex-col lg:flex-row lg:gap-8 gap-4 lg:items-center">
+                <ul className="flex flex-col lg:flex-row lg:gap-8 gap-4 lg:items-center mt-4 lg:mt-0">
                     <li
                         key="1006"
                         className="
